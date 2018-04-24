@@ -33,9 +33,7 @@ As actions change, buttons change
 
 It can lens your site in an air of professionalism.
 
----
-
-## Getting things to move is easy, but planning how they should move is hard
+> Getting things to move is easy, but planning how they should move is hard
 
 ---
 
@@ -65,8 +63,8 @@ It can lens your site in an air of professionalism.
 
 > Triggers when an element is "being activated by the user"
 
-[MDN :active](https://developer.mozilla.org/en-US/docs/Web/CSS/:active)
-[Code Pen Example](https://codepen.io/Colt/pen/QgpzMy?editors=1100)
+- [MDN :active](https://developer.mozilla.org/en-US/docs/Web/CSS/:active)
+- [Code Pen Example](https://codepen.io/Colt/pen/QgpzMy?editors=1100)
 
 This is like when a button is being actively clicked.
 
@@ -78,7 +76,9 @@ This is like when a button is being actively clicked.
 ### Transforms
 
 > "lets you manipulate the coordingate space of the CSS visual formatting model"
+
 OR
+
 > "lets you move, warp, rotate, and scale elements"
 
 - [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/transform?v=control)
