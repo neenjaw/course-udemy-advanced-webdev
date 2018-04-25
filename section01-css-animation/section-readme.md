@@ -87,3 +87,8 @@ OR
 
 - [Code Pen Exercise](https://codepen.io/Colt/pen/GEmOjv?editors=1100)
 
+#### Scale
+
+- [Code Pen Exercise](https://codepen.io/neenjaw/pen/mLEyvJ)
+- [MDN scale()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale)
+- [MDN transform-origin](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)
