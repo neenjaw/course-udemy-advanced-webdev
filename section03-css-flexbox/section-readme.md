@@ -9,8 +9,7 @@ What is **Flexbox**?
 - [CSS Tricks - Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Flexbox Froggy](http://flexboxfroggy.com/)
 
-| Container  | Flex Item  |
-| Properties | Properties |
+| Container Properties | Flex Item Properties |
 |------------|------------|
 |`flex-direction`|`order`|
 |`justify-content`|`flex`|
