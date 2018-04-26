@@ -8,6 +8,13 @@ They allow us to build multi component, multi state animations.
 
 > keyframes allow for more complex, **multi-state animations**
 
+## Examples: 
+
+- [Cat](https://codepen.io/SoyEva/full/LRjWzZ/)
+- [Christmas](https://codepen.io/dodozhang21/full/imIvg/)
+- [Jellyfish](https://codepen.io/FabioG/full/QjLreK/)
+- [Clock](https://codepen.io/iliadraznin/full/JcqbE/)
+
 ## Basic 
 
 There is an implicit timeline running from 0% to 100%
@@ -16,19 +23,8 @@ For example:
 
 | Property | 0% | @25% | @50% | @75% | @100% |
 |----------|----|------|------|------|-------|
-<<<<<<< HEAD
-| `color:` | `red` | `orange` | `yellow` | `green` | `blue` |
-| `font-size:` | `20px` | | `40px` | | `20px` |
-
-## Examples:
-
-- [Cat](https://codepen.io/SoyEva/full/LRjWzZ/)
-- [Christmas](https://codepen.io/dodozhang21/full/imIvg/)
-- [Jellyfish](https://codepen.io/FabioG/full/QjLreK/)
-- [Clock](https://codepen.io/iliadraznin/full/JcqbE/)- [Clock](https://codepen.io/iliadraznin/full/JcqbE/)
-=======
-| `color:` | `red` | `orange` | `yellow` | 
-| `font-size:` | `20px` | | `40px` | 
+| `color:` | `red` | `orange` | `yellow` |
+| `font-size:` | `20px` | | `40px` |
 
 ## Exercise
 
@@ -117,4 +113,3 @@ Starter
 Mine
 
 - [Mine](https://codepen.io/neenjaw/pen/XqjrOw?editors=1100)
->>>>>>> f4cbb26067d10ad6c832eef36937655720c6414f
