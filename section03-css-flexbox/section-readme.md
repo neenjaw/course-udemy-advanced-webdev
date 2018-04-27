@@ -86,3 +86,31 @@ From CSS Tricks:
 
 - [Code Pen](https://codepen.io/neenjaw/pen/erdozz?editors=1100)
 - [Code Pen Solution](https://codepen.io/Colt/pen/WEQQwq)
+
+## `align-self`
+
+Allows an individual box to be aligned independently from the rest on the cross axis
+
+`align-self: flex-start|flex-end|stretch|center|baseline`
+
+## `order`
+
+Specifies the order used to lay out items in the flex container. By default everything has an order of '0'.
+
+The order in the flexbox goes from least to greatest order.
+
+`order: <int>`
+
+## `flex`
+
+A short hand for these three properties:
+
+1. `flex-basis`
+2. `flex-grow`
+3. `flex-shrink`
+
+### `flex-basis`
+
+Sort of like `width` but not really.  Specifies the ideal size of a flex item *BEFORE* it's placed into a flex container.
+
+- [Geddski on flexbasis](http://gedd.ski/post/the-difference-between-width-and-flex-basis/)
