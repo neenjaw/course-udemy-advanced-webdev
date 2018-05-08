@@ -86,3 +86,5 @@ From CSS Tricks:
 
 - [Code Pen](https://codepen.io/neenjaw/pen/erdozz?editors=1100)
 - [Code Pen Solution](https://codepen.io/Colt/pen/WEQQwq)
+
+## `align-self`
