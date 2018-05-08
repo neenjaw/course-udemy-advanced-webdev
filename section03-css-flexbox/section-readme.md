@@ -87,4 +87,75 @@ From CSS Tricks:
 - [Code Pen](https://codepen.io/neenjaw/pen/erdozz?editors=1100)
 - [Code Pen Solution](https://codepen.io/Colt/pen/WEQQwq)
 
+<<<<<<< HEAD
 ## `align-self`
+=======
+## `align-self`
+
+Allows an individual box to be aligned independently from the rest on the cross axis
+
+`align-self: flex-start|flex-end|stretch|center|baseline`
+
+## `order`
+
+Specifies the order used to lay out items in the flex container. By default everything has an order of '0'.
+
+The order in the flexbox goes from least to greatest order.
+
+`order: <int>`
+
+## `flex`
+
+A short hand for these three properties:
+
+1. `flex-basis`
+2. `flex-grow`
+3. `flex-shrink`
+
+Can be combined into this shorthand:
+
+`flex: <grow> <shrink> <basis<`
+
+### `flex-basis`
+
+Sort of like `width` but not really.  Specifies the ideal size of a flex item *BEFORE* it's placed into a flex container.
+
+`flex-basis: <measurement>`
+
+- [Geddski on flexbasis](http://gedd.ski/post/the-difference-between-width-and-flex-basis/)
+
+### `flex-grow`
+
+How does the unused space in the flexbox get used?
+
+`flex-grow: 0|<int ratio>`
+
+- *0* means don't grow
+- *ratio* means that the space will be weighted
+
+- [CSS Tricks Resource - flex-grow](https://css-tricks.com/flex-grow-is-weird/)
+
+### `flex-shrink`
+
+How does the flex-box item react when there isnt enough space in the container
+
+`flex-shrink: 0|<int ratio>`
+
+- *0* means don't shrink
+- *ratio* means that the space will be weighted
+
+## Exercise: Polygon Widget
+
+- [Code Pen](https://codepen.io/neenjaw/pen/vjydbO?editors=1100)
+- [Code Pen Solution](https://codepen.io/Colt/pen/oexwvb)
+
+## Exercise: Holy Grail Layout
+
+- [Wikipedia: Holy Grail (web design)](https://en.wikipedia.org/wiki/Holy_grail_(web_design))
+- [Code Pen](https://codepen.io/neenjaw/pen/PebRPp?editors=1100)
+
+## Browser Support
+
+- [Medium: How to deal with older browsers?](https://medium.com/css-mine/flexbox-how-to-deal-with-older-browsers-fbf6eb8c7a65)
+- [CSS Tricks: mixing old and new flexbox](https://css-tricks.com/using-flexbox/)
+>>>>>>> 2fb632f00fc4dac41ef1eeff592a6ee9790a203e
