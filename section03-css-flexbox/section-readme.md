@@ -87,9 +87,6 @@ From CSS Tricks:
 - [Code Pen](https://codepen.io/neenjaw/pen/erdozz?editors=1100)
 - [Code Pen Solution](https://codepen.io/Colt/pen/WEQQwq)
 
-<<<<<<< HEAD
-## `align-self`
-=======
 ## `align-self`
 
 Allows an individual box to be aligned independently from the rest on the cross axis
@@ -158,4 +155,3 @@ How does the flex-box item react when there isnt enough space in the container
 
 - [Medium: How to deal with older browsers?](https://medium.com/css-mine/flexbox-how-to-deal-with-older-browsers-fbf6eb8c7a65)
 - [CSS Tricks: mixing old and new flexbox](https://css-tricks.com/using-flexbox/)
->>>>>>> 2fb632f00fc4dac41ef1eeff592a6ee9790a203e
