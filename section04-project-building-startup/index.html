@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mountain Travel</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
   <!-- Forked from a template on Tutorialzine: https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox -->
   <div class="section landing">
     <nav class="landing__nav">
       <h4>Mountain travel</h4>
       <ul class="landing__links">
-        <li><a href="/">Tours</a></li>
-        <li><a href="/">About</a></li>
-        <li><a href="/">Contact Us</a></li>
+        <li>
+          <a href="/">Tours</a>
+        </li>
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/">Contact Us</a>
+        </li>
       </ul>
     </nav>
     <div class="landing__content">
@@ -28,44 +37,105 @@
   </div>
 
   <div class="section gallery">
-    <div style="background-image: url('/section04-project-building-startup/assets/img/mountain1.jpg');" class="gallery__picture picture--fr1 picture1">&nbsp;</div>
-    <div style="background-image: url('/section04-project-building-startup/assets/img/mountain2.jpg');" class="gallery__picture picture--fr3 picture2">&nbsp;</div>
-    <div style="background-image: url('/section04-project-building-startup/assets/img/mountain3.jpg');" class="gallery__picture picture--fr3 picture3">&nbsp;</div>
-    <div style="background-image: url('/section04-project-building-startup/assets/img/mountain4.jpg');" class="gallery__picture picture--fr1 picture4">&nbsp;</div>
+    <div class="gallery__header">
+      <h2>Some of our Destinations</h2>
+      <p>Tired of the ocean? Are the plains too plain? Come along with us on one of our mountain adventures.</p>
+      <p>Here are some pictures from people who have had elecated experiences with us.</p>
+      <hr class="divider divider--purple">
+    </div>
+    <div class="gallery__contents">
+      <div style="background-image: url('/section04-project-building-startup/assets/img/mountain1.jpg');" class="gallery__picture picture--fr1 picture1">&nbsp;</div>
+      <div style="background-image: url('/section04-project-building-startup/assets/img/mountain2.jpg');" class="gallery__picture picture--fr3 picture2">&nbsp;</div>
+      <div style="background-image: url('/section04-project-building-startup/assets/img/mountain3.jpg');" class="gallery__picture picture--fr3 picture3">&nbsp;</div>
+      <div style="background-image: url('/section04-project-building-startup/assets/img/mountain4.jpg');" class="gallery__picture picture--fr1 picture4">&nbsp;</div>
+    </div>
   </div>
 
   <div class="section features">
     <div class="features__header">
       <h2>Tour Packages</h2>
-      <p>We offer a variety of mountaineering packages.  Whether you've climbed Everest or don't even know what a mountain is, we've got the perfect vacation for you.</p>
+      <p>We offer a variety of mountaineering packages. Whether you've climbed Everest or don't even know what a mountain is,
+        we've got the perfect vacation for you.</p>
       <hr class="divider divider--purple">
     </div>
     <div class="features__packages">
       <div class="package package1">
-        <div class="package__icon"><i class="far fa-compass"></i></div>
+        <div class="package__icon icon--faded-purple">
+          <i class="far fa-compass"></i>
+        </div>
         <h3 class="package__title">Guided Trips</h3>
-        <p class="package__description">Looking for the complete experience? Take a tour with one of our experts.  They'll show you the secrets that you're likely to miss otherwise.</p>
+        <p class="package__description">Looking for the complete experience? Take a tour with one of our experts. They'll show you the secrets that you're
+          likely to miss otherwise.</p>
       </div>
       <div class="package package2">
-        <div class="package__icon"><i class="fas fa-camera-retro"></i></div>
+        <div class="package__icon icon--faded-purple">
+          <i class="fas fa-camera-retro"></i>
+        </div>
         <h3 class="package__title">Photography Trips</h3>
         <p class="package__description">Want to experience nature's beauty without all that annoying exercise? Take a photo tour on one of our mountain buses.</p>
       </div>
       <div class="package package3">
-        <div class="package__icon"><i class="fas fa-bicycle"></i></div>
+        <div class="package__icon icon--faded-purple">
+          <i class="fas fa-bicycle"></i>
+        </div>
         <h3 class="package__title">Bicycle Trips</h3>
-        <p class="package__description">If bicycles are more your speed, consider taking a tour through one of our mountain bike paths.  We'll provide the bikes, and lunch too!</p>
+        <p class="package__description">If bicycles are more your speed, consider taking a tour through one of our mountain bike paths. We'll provide the
+          bikes, and lunch too!</p>
       </div>
       <div class="package package4">
-        <div class="package__icon"><i class="fas fa-flag-checkered"></i></div>
+        <div class="package__icon icon--faded-purple">
+          <i class="fas fa-flag-checkered"></i>
+        </div>
         <h3 class="package__title">Racing Trips</h3>
         <p class="package__description">Got a competitive spirit? Sign up for one of our mountain marathons! Try to reach the summit before anyone else.</p>
       </div>
     </div>
   </div>
 
-  <div class="section testamonials">&nbsp;</div>
-  <div class="section call">&nbsp;</div>
-  <div class="section footer">&nbsp;</div>
+  <div class="section testamonials">
+    <div class="testamonials__header">
+      <h2>Testamonials from our Adventurers</h2>
+      <hr class="divider divider--purple">
+    </div>
+    <div class="testamonials__content">
+      <div class="testamonial testamonial1">
+        <p class="testamonial__quote">Wow! This tour made me realize how much I love mountains. After going on one of these tours, I can safely say that they are my favorite geographic feature, and my favorite word that starts with M.</p>
+        <p class="testamonial__author">– Colt Steele</p>
+      </div>
+      <div class="testamonial testamonial2">
+        <p class="testamonial__quote">I never understood why people cared so much about mountains. But then I went on one of these tours. Now I can't understand people who <em>don't</em> care about mountains!</p>
+        <p class="testamonial__author">– Elie Schoppik</p>
+      </div>
+      <div class="testamonial testamonial3">
+        <p class="testamonial__quote">If you want to understand the universe, head to the mountains. I mean, seriously. It's like, woah. You know? It's like that.</p>
+        <p class="testamonial__author">– Tim Garcia</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section call">
+    <div class="call__header">
+      <h2>Learn more</h2>
+      <p>Want to know about our upcoming mountain-related events, or come to one of our mixers? Just sign up for our mailing list. No spam from us, we promise! Except for the spam we give you to keep up your energy while you're hiking through the mountains.  We have tons of that.</p>
+      <hr class="divider divider--purple">
+    </div>
+    <div class="call__content">
+      <form action="/section04-project-building-startup/index.html" method="POST">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <button class="landing__button">Subscribe Now</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="section footer">
+    <p>Images courtesy of Unsplash.</p>
+    <p>Why are you even reading this?! There's never anything interesting in the footer!</p>
+    <div class="footer__social">
+      <i class="fab fa-twitter-square"></i>
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-snapchat-square"></i>
+    </div>
+  </div>
 </body>
+
 </html>

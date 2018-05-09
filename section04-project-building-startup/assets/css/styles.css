@@ -8,11 +8,22 @@ html, body {
 
     margin: 0;
     padding: 0;
+
+    color: rgb(66, 66, 66);
 }
 
 body {
     background-color: white;
     font-family: 'Open Sans', 'Quicksand', 'Arial';
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p:last-of-type {
+    margin-bottom: 20px;
 }
 
 .section:nth-child(odd) {
@@ -21,6 +32,20 @@ body {
 
 .section:nth-child(even) {
     background-color: rgb(245, 245, 245);
+}
+
+.divider {
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 4px;
+    width: 30%;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.divider--purple {
+    background-color: purple;
 }
 
 /* Landing Section */
@@ -112,8 +137,12 @@ body {
 /* Gallery Section */
 
 .gallery {
-    padding: 20px 80px;
+    text-align: center;
 
+    padding: 20px 80px;
+}
+
+.gallery__contents {
     display: flex;
     flex-wrap: wrap;
 }
@@ -149,3 +178,136 @@ body {
         flex-basis: calc(100% - 40px);
     }
 } 
+
+/* Features */
+
+.features {
+    margin: 20px 80px;
+    text-align: center;
+}
+
+.features__packages {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.package {
+    flex-basis: 50%;
+    padding: 20px;
+}
+
+.package__icon {
+    font-size: 56px;
+}
+
+.icon--faded-purple {
+    color: rgb(156, 137, 185);
+}
+
+.package__title {
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 730px) {
+    .package {
+        flex-basis: 100%;
+    }
+}
+
+/* Testamonials */
+
+.testamonials {
+    padding: 20px 80px;
+    text-align: center;
+}
+
+.testamonials__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.testamonial {
+    width: 80%;
+}
+
+.testamonial:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.testamonial:nth-child(even) {
+    align-self: flex-end;
+}
+
+.testamonial__quote {
+    margin-bottom: 10px;
+}
+
+.testamonial__author {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+@media only screen and (max-width: 1000px) {
+    .testamonial {
+        align-self: center !important;
+    }
+}
+
+/* Call to Action */
+
+.call {
+    padding: 20px 80px;
+    text-align: center;
+}
+
+.call__content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.call__content input {
+    margin: 10px;
+    padding: 8px;
+    width: 80%;
+
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.555);
+
+    font-size: 24px;
+}
+
+.call__content button {
+    border: 0;
+    color: white;
+}
+
+/* Footer */
+
+.section.footer {
+    padding: 20px 80px;
+    text-align: center;
+
+    background-color: rgb(72, 70, 156);
+
+    color: white;
+}
+
+.footer p {
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__social > * {
+    padding: 5px;
+    font-size: 36px;
+}
