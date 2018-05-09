@@ -1,4 +1,6 @@
-*, * > * {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -14,7 +16,7 @@ html, body {
 
 body {
     background-color: white;
-    font-family: 'Open Sans', 'Quicksand', 'Arial';
+    font-family: 'Quicksand', 'Arial';
 }
 
 p {
@@ -72,6 +74,9 @@ p:last-of-type {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
+    animation: 1s fadein 0.5s forwards;
+    opacity: 0;
 }
 
 .landing__links {
@@ -102,9 +107,14 @@ p:last-of-type {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    animation: 1s fadein 0.3s forwards, 1s slideintoplace 0.3s forwards;
+    opacity: 0;
+    transform: translateY(50px);
 }
 
 .landing__content h1 {
+    font-family: 'Open Sans', sans-serif;
     font-size: 64px;
     margin: 10px;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.588);
@@ -124,7 +134,7 @@ p:last-of-type {
 
     padding: 8px 16px;
     margin-bottom: 100px;
-    background-color: darkorchid;
+    background-color: #3f51b5;
     border-radius: 5px;
 
     transition: background-color 0.2s ease-in-out;
@@ -132,6 +142,12 @@ p:last-of-type {
 
 .landing__button:hover {
     background-color: purple;
+}
+
+@media only screen and (max-width: 780px) {
+    .landing__content h2 {
+        font-size: 24px;
+    }
 }
 
 /* Gallery Section */
@@ -148,10 +164,11 @@ p:last-of-type {
 }
 
 .gallery__picture {
-    margin: 20px;
+    padding: 20px;
 
     height: 300px;
     
+    background-clip: content-box;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -159,23 +176,25 @@ p:last-of-type {
 
 .picture--fr1 {
     flex-grow: 1;
-    flex-basis: calc(33.3% - 40px);
+    /* flex-basis: calc(33.3% - 40px); */
+    flex-basis: 30%;
 }
 
 .picture--fr3 {
     flex-grow: 3;
-    flex-basis: calc(66.6% - 40px);
+    /* flex-basis: calc(66.6% - 40px); */
+    flex-basis: 70%;
 }
 
 @media only screen and (max-width: 1000px) {
     .gallery__picture {
-        flex-basis: calc(50% - 40px);
+        flex-basis: 50%;
     }
 } 
 
 @media only screen and (max-width: 875px) {
     .gallery__picture {
-        flex-basis: calc(100% - 40px);
+        flex-basis: 100%;
     }
 } 
 
@@ -242,6 +261,8 @@ p:last-of-type {
 
 .testamonial__quote {
     margin-bottom: 10px;
+    line-height: 1.5;
+    font-weight: 300;
 }
 
 .testamonial__author {
@@ -291,7 +312,7 @@ p:last-of-type {
     padding: 20px 80px;
     text-align: center;
 
-    background-color: rgb(72, 70, 156);
+    background-color: #607d8b;
 
     color: white;
 }
@@ -310,4 +331,18 @@ p:last-of-type {
 .footer__social > * {
     padding: 5px;
     font-size: 36px;
+}
+
+/* Animations */
+
+@keyframes fadein {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideintoplace {
+    100% {
+        transform: translateY(0px);
+    }
 }
