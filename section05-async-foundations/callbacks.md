@@ -27,7 +27,7 @@ higherOrder(callback);
 
 > a higher order function is a function that accepts a callback as a parmeter
 
-### What are call backs used for?
+### What are call backs used for
 
 > callbacks are a very common design pattern in javascript
 
