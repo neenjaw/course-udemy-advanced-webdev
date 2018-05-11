@@ -85,3 +85,47 @@ greet("Tim", function(name) {
     return name.toUpperCase();
 });
 ```
+
+## setTimeout() and setInterval()
+
+### setTimeout()
+
+- a function that asynchronously invikes a callback after a delay in milliseconds
+
+```js
+const timerID = setTimeout(function() {
+    console.log("Runs in approx. 2000ms");
+}, 2000);
+
+//timerID can be used to cancel the timer
+clearTimeout(timerID);
+```
+
+### setInterval()
+
+- a function with continually invokes a callback every X milliseconds
+
+```js
+let num = 0;
+setInterval(function() {
+    num++;
+    console.log("num:", num);
+}, 1000);
+```
+
+## Assignment
+
+```js
+function countDown(seconds) {
+    let timeLeft = seconds;
+    const intervalId = setInterval(function() {
+        timeLeft = timeLeft - 1;
+        if (timeLeft <= 0) {
+            clearInterval(intervalId);
+            console.log("Ring Ring Ring!!!");
+        } else {
+            console.log(timeLeft);
+        }
+    }, 1000);
+}
+```
