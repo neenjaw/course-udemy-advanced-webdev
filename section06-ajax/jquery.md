@@ -64,10 +64,53 @@ $.ajax({
 });
 ```
 
+## $.get()
+
+```js
+  $.get('https://api.github.com/users/colt')
+   .done(function(data){
+     console.log(data);
+   })
+   .fail(function(){
+     console.log("ERROR!");
+   })
+```
+
+## $.post()
+
+```js
+var data = {name: "Charlie", city: "Florence"};
+
+$.post("www.catsarecoolandsoaredogs.com", data)
+ .done(function(data){
+     console.log("HI!");
+ })
+ .fail(function(){
+     console.log("ERROR!");
+ })
+```
+
+## $.getJSON()
+
+```js
+$.getJSON("https://api.github.com/users/colt")
+ .done(function(data){
+     console.log(data);
+ })
+ .fail(function(){
+     console.log("PROBLEM!");
+ })
+```
+
+
 ### Links
 
 - [jQuery Doc for $.ajax](http://api.jquery.com/jQuery.ajax/)
+- [jQuery Doc for $.get](https://api.jquery.com/jQuery.get/)
+- [jQuery Source for Ajax](https://github.com/jquery/jquery/blob/731c501155ef139f53029c0e58409b80f0af3a0c/src/ajax.js)
+- [jQuery Source for XHR](https://github.com/jquery/jquery/blob/731c501155ef139f53029c0e58409b80f0af3a0c/src/ajax/xhr.js)
 - [$.ajax Example](https://codepen.io/Colt/pen/brYLvg)
+- [Shorthand Examples](https://codepen.io/Colt/pen/braVVr?editors=1010)
 - [Bacon Ipsum API](https://baconipsum.com/api/?type=meat-and-filler)
 
 ## Resources

@@ -1,0 +1,66 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container {
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.btn__method {
+    margin: 20px;
+    height: 50px;
+    width: 100px;
+
+    text-decoration: none;
+    color: black;
+
+    border: 2px solid black;
+    border-radius: 25px;
+
+    transition: all 100ms ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__method:hover {
+    background-color: grey;
+    color: white;
+}
+
+.btn--green {
+    color: #1abc9c;
+    border: 2px solid #1abc9c;
+}
+
+.btn--green:hover {
+    background-color: #1abc9c;
+    color: white;
+}
+
+.quote:before, .quote:after {
+    content: '"'
+}
+
+.quote {
+    max-width: 80%;
+    min-width: 300px;
+
+    text-align: center;
+}

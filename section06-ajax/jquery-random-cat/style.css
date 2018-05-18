@@ -1,0 +1,29 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 100%;
+}
+
+#refresh {
+    width: 200px;
+    height: 50px;
+}
+
+#container {
+    min-width: 300px;
+    min-height: 200px;
+    border: 1px solid black;
+    margin: 1em;
+}
+
+#container > img {
+    height: 100%;
+    max-width: 400px;
+}
