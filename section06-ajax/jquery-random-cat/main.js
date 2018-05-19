@@ -5,7 +5,7 @@ const btn = document.querySelector('#refresh');
 const container = document.querySelector('#container');
 
 function createImageElement(src) {
-    return $('img').attr('src', src)
+    return $('img').attr('src', src);
 }
 
 function handleImageRefresh() {
