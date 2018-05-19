@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jasmine Tests</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine.css">
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/jasmine-html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.1.0/boot.js"></script>
+    <script>
+        var earth = {
+            isRound: true,
+            numberFromSun: 3
+        }
+
+        describe("Earth", function () {
+            it("is round", function () {
+                expect(earth.isRound).toBe(true);
+            });
+
+            it("is the third planet from the sun", function () {
+                expect(earth.numberFromSun).toBe(3);
+            });
+        });
+
+        describe("Jasmine Matchers", function () {
+            it("allows for === and deep equality", function () {
+                expect(1 + 1).toBe(2);
+                expect([1, 2, 3]).toEqual([1, 2, 3]);
+            });
+
+            it("allows for easy precision checking", function () {
+                expect(3.1415).toBeCloseTo(3.14, 2);
+            });
+
+            it("allows for easy truthy / falsey checking", function () {
+                expect(0).toBeFalsy();
+                expect([]).toBeTruthy();
+            });
+
+            it("allows for easy type checking", function () {
+                expect([]).toEqual(jasmine.any(Array));
+                expect(function () {}).toEqual(jasmine.any(Function));
+            });
+
+            it("allows for checking contents of an object", function () {
+                expect([1, 2, 3]).toContain(1);
+                expect({
+                    name: 'Elie',
+                    job: 'Instructor'
+                }).toEqual(jasmine.objectContaining({
+                    name: 'Elie'
+                }));
+            });
+        });
+
+        function addThree(a,b,c) {
+            return a+b+c;
+        }
+
+        describe("add", function() {
+            var foo, addSpy, resultA, addThreeSpy, resultB;
+
+            beforeEach(function(){
+                foo = {
+                    add: function(a,b) {
+                        return a+b;
+                    }
+                };
+
+                addSpy = spyOn(foo, 'add').and.callThrough();
+                resultA = addSpy(1,2);
+
+                addThreeSpy = spyOn(window, 'addThree').and.callThrough();
+                resultB = addThreeSpy(1,2,3);
+            });
+
+            it("can have params tested", function() {
+                expect(addSpy.calls.count()).toBe(1);
+                expect(addSpy.calls.any()).toBe(true);
+                expect(resultA).toEqual(3)
+            });
+
+            it("can test more params", function() {
+                expect(addThreeSpy.calls.count()).toBe(1);
+                expect(addThreeSpy.calls.any()).toBe(true);
+                expect(resultB).toEqual(6)
+            });
+        });
+
+        describe('a simple setTimeout', function() {
+            var sample;
+
+            beforeEach(function() {
+                sample = jasmine.createSpy('sampleFunction');
+                jasmine.clock().install();
+            });
+
+            afterEach(function() {
+                jasmine.clock().uninstall();
+            });
+
+            it('is only invoked after 1000 milliseconds', function() {
+                setTimeout(function() {
+                    sample();
+                }, 1000);
+
+                jasmine.clock().tick(999);
+                expect(sample).not.toHaveBeenCalled();
+
+                jasmine.clock().tick(1);
+                expect(sample).toHaveBeenCalled();
+            });
+        });
+
+        describe('a simple interval', function() {
+            var dummyFunction;
+
+            beforeEach(function(){
+                dummyFunction = jasmine.createSpy('dummyFunction');
+                jasmine.clock().install();
+            });
+
+            afterEach(function(){
+                jasmine.clock().uninstall();
+            });
+
+            it('checks to see the number of times the function is invoked', function(){
+                setInterval(function() {
+                    dummyFunction();
+                }, 1000);
+
+                jasmine.clock().tick(999);
+                expect(dummyFunction.calls.count()).toBe(0);
+
+                jasmine.clock().tick(1000);
+                expect(dummyFunction.calls.count()).toBe(1);
+
+                jasmine.clock().tick(1);
+                expect(dummyFunction.calls.count()).toBe(2);
+            });
+        });
+
+        function getUserInfo(username) {
+            return $.getJSON('https://api.github.com/users/'+username);
+        }
+
+        describe('#getUserInfo', function() {
+            it('returns the correct name for the user', function(done) {
+                getUserInfo('elie').then(function(data) {
+                    expect(data.name).toBe('Elie Schoppik');
+                    done();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
