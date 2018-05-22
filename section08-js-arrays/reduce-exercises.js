@@ -34,18 +34,28 @@ Examples:
 */
 
 function vowelCount(str){
-    return [... str.toLowerCase()].reduce(function(vowelCounts, letter) {
-        vowels = [...'aeiou'];
+    const vowels = [...'aeiou'];
+
+    return [... (str.toLowerCase())].reduce(function(counts, letter) {
+        // console.log({vowels, counts, letter});
 
         if (vowels.includes(letter)) {
-            if (letter in vowelCounts) {
-                vowelCounts[letter]++;
+            if (letter in counts) {
+                counts[letter]++;
             } else {
-                vowelCounts[letter] = 1;
+                counts[letter] = 1;
             }
         }
+
+        return counts;
     }, {});
 }
+
+// console.log(vowelCount('Elie')) // {e:2,i:1};
+// console.log(vowelCount('Tim')) // {i:1};
+// console.log(vowelCount('Matt')) // {a:1})
+// console.log(vowelCount('hmmm')) // {};
+// console.log(vowelCount('I Am awesome and so are you')) // {i: 1, a: 4, e: 3, o: 3, u: 1};
 
 /*
 Write a function called addKeyAndValue which accepts an array of objects and returns the array of objects passed to it with each object now including the key and value passed to the function.
@@ -63,12 +73,17 @@ Examples:
 */
 
 function addKeyAndValue(arr, key, value){
-    return arr.reduce(function(arrayWithNewKey, current) {
-        current[key] = value;
-        arrayWithNewKey.push(current);
+    // return arr.reduce(function(arrayWithNewKey, current) {
+    //     current[key] = value;
+    //     arrayWithNewKey.push(current);
 
-        return arrayWithNewKey;
-    },[]);
+    //     return arrayWithNewKey;
+    // },[]);
+
+    return arr.reduce(function(acc, next, idx) {
+        acc[idx][key] = value;
+        return acc;
+    }, arr);
 }
 
 // var arr = [{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}];
@@ -97,5 +112,29 @@ Examples:
 */
 
 function partition(arr, callback){
-    
+    return arr.reduce(function(partition, current) {
+        if (callback(current)) {
+            partition[0].push(current);
+        } else {
+            partition[1].push(current);
+        }
+
+        return partition;
+    }, [[],[]]);
 }
+
+// function isEven(val){
+//     return val % 2 === 0;
+// }
+
+// var arr = [1,2,3,4,5,6,7,8];
+
+// console.log(partition(arr, isEven))
+
+// function isLongerThanThreeCharacters(val){
+//     return val.length > 3;
+// }
+
+// var names = ['Elie', 'Colt', 'Tim', 'Matt'];
+
+// console.log(partition(names, isLongerThanThreeCharacters))
