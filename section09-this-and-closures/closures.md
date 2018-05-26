@@ -57,3 +57,58 @@ function outerFn() {
 ```
 
 ## Using Closures
+
+### Private Variables
+
+In other languages, there exists support for variables that can not be modified externally, we call those private variables.  In JavaScript we don't have that built in.  No worries - closures can help!
+
+```js
+function counter() {
+    var count = 0;
+    return function () {
+        count++;
+        return count;
+    }
+}
+
+//count is not accessible from the universal scope because it is declared inside of a function
+```
+
+```js
+function classRoom() {
+    var instructors = ['Elie', 'Colt'];
+
+    return {
+        getInstructors: function() {
+            return instructors;
+        },
+        addInstructor: function(instructor) {
+            instructors.push(instructor);
+            return instructors;
+        }
+    }
+}
+
+var first = classroom();
+
+first.addInstructor('Tim') // ['Elie','Colt','Tim']
+```
+
+This is not the correct implementation because it still allows access to the original array because the reference is passed.
+
+Correct implementation:
+
+```js
+function classRoom() {
+    var instructors = ['Elie', 'Colt'];
+
+    return {
+        getInstructors: function() {
+            return instructors.slice();
+        },
+        addInstructor: function(instructor) {
+            instructors.push(instructor);
+            return instructors.slice();
+        }
+    }
+}
