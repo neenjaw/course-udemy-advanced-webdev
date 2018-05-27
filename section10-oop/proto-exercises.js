@@ -43,6 +43,8 @@ Examples:
 Person.prototype.addToFamily = function(member) {
     if (member instanceof Person && this.family.every(function(m) { return m !== member; })) {
         return this.family.push(member);
+    } else {
+        return this.family.length;
     }
 };
 
