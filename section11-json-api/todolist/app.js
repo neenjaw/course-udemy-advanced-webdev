@@ -31,7 +31,7 @@ if (dbCredentialsProvided) {
 // Mongoose Models
 // --
 
-const Todo = require('./models/todo');
+// const Todo = require('./models/todo');
 
 // --
 // Express
@@ -47,6 +47,9 @@ app.use(express.urlencoded({extended: true}));
 
 // Sanitize body
 app.use(expressSanitizer());
+
+// Static File Serve Dir
+app.use(express.static(__dirname + '/public'));
 
 // --
 //  > Routes
