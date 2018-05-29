@@ -6,7 +6,43 @@ const App = function(){
     const route = 'api/todos';
     const url = `http://${host}:${port}/${route}`;
 
-    function setTodoClickListener() {
+    function todoFormSubmitListener() {
+        $('.todo-form').submit(function(ev) {
+            ev.preventDefault();
+
+            const input = $('.todo-input');
+            const task = input.val();
+
+            if (task.length > 3) {
+                
+                const req = {
+                    method: 'POST',
+                    url: url,
+                    dataType: 'json',
+                    data: `todo[task]=${task}`
+                };
+
+                $.ajax(req)
+                    .done((res) => {
+                        input.val(''); // clear the input
+
+                        if (res.status === 'ok' && res.created) {
+                            res.result.forEach(function(newTodo) {
+                                $(todoElementString(newTodo._id, newTodo.task, newTodo.completed)).appendTo('.todolist');
+                            });
+                        }
+                    })
+                    .fail(() => {
+                        console.error('There was a problem creating the new todo');                        
+                    });
+
+            } else {
+                //display something to ask for a longer string
+            }
+        });
+    }
+
+    function todoClickListener() {
         function toggleTodoComplete(id, value, callback) {
             const req = {
                 method: 'PUT',
@@ -62,7 +98,7 @@ const App = function(){
 
         $.ajax(req)
             .done((response) => {
-                console.log(response);
+                // console.log(response);
 
                 if (response.status === 'ok') {
                     response.result.forEach(function(todo) {
@@ -84,7 +120,8 @@ const App = function(){
         </li>`;
     }
 
-    setTodoClickListener();
+    todoFormSubmitListener();
+    todoClickListener();
     getAllTodos();
 };
 
