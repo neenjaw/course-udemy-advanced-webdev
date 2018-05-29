@@ -110,6 +110,10 @@ body {
     padding-right: 5px;
 }
 
+.todolist-item .todo-task {
+    transition: color 150ms ease-out;
+}
+
 .todo-delete {
     visibility: hidden;
     color: firebrick;
@@ -120,7 +124,7 @@ body {
     visibility: visible;
 }
 
-.todolist-item.complete .todo-task {
+.todolist-item.completed .todo-task {
     color: #798C8A;
     text-decoration: line-through #4D5459;
 }

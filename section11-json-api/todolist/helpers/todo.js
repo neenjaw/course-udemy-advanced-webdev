@@ -17,6 +17,8 @@ exports.getTodos = function (req, res) {
 exports.createTodo = function (req, res) {
     const todo = req.body.todo;
 
+    console.log({todo});
+
     Todo.create(todo)
         .then((newTodo) => {
             res
