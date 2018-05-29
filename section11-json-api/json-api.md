@@ -39,3 +39,18 @@ mkdir data
 echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
 chmod a+x mongod
 ```
+
+## Reflection
+
+Colt uses a lot of the jQuery shorthand methods for ajax calls. eg:
+
+1. `$.getJSON()`
+2. `$.post()`
+3. `$.put()`
+4. `$.delete()`
+
+I did not do that as I used the generic `$.ajax()` call, specifying the method to be used.  I think the difference made it required for me to prepend the protocol (`http://...`) to the start of the url, where he does not do that.  It might also be because I specified `localhost:3000` where he just has the path portion.
+
+Overall, was able to implement the app with minimal help from the code-along.  The biggest thing was how simply colt did the delete button for each task.  I had this complex nested span and using flexbox to get the positioning I wanted, whereas Colt had a simple `float: right;` on the delete span.
+
+One other difference is that I just serve my index html as a static file from the public directory, where he has a dedicated express route for it.  Looking it up, the biggest difference between the methods is that the public directory will set a couple headers automatically that would generally have to be specified otherwise.

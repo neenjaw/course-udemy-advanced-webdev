@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 * {
     box-sizing: border-box;
 }
@@ -68,10 +69,13 @@ body {
 
     color: #798C8A;
     font-size: 20px;
+    outline: none;
+    font: 300 28px 'Ubuntu', sans-serif;
 }
 
 .todolist {
-    list-style: none;
+    /* list-style: none; */
+    list-style-position: inside;
 
     margin: 0;
     margin-top: 25px;
@@ -94,34 +98,36 @@ body {
 
     transition: all 150ms ease-in-out;
 
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: baseline; */
 }
 
 .todolist-item:hover {
     border-color: #798C8A;
 }
 
-.todo-task:before {
+/* .todo-task:before {
     font-size: 20px;
     font-weight: 900;
     content: "\2022";
     padding-right: 5px;
-}
+} */
 
 .todolist-item .todo-task {
     transition: color 150ms ease-out;
 }
 
 .todo-delete {
-    visibility: hidden;
+    opacity: 0;
     color: firebrick;
     font-weight: 900;
+
+    float: right;
 }
 
 .todolist-item:hover .todo-delete {
-    visibility: visible;
+    opacity: 1;
 }
 
 .todolist-item.completed .todo-task {

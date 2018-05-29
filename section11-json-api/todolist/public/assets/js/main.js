@@ -125,4 +125,6 @@ const App = function(){
     getAllTodos();
 };
 
-App();
+$(document).ready(function() {
+    App();
+});
