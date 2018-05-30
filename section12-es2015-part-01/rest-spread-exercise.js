@@ -28,8 +28,10 @@ Examples:
     placeInMiddle([],[2,3,4,5]) // [2,3,4,5]
 */
 
-function placeInMiddle(arr, vals){
-    
+function placeInMiddle(arr1, arr2){
+    const middle = Math.floor(arr1.length / 2);
+
+    return [... arr1.slice(0, middle), ... arr2, ... arr1.slice(middle)];
 }
 
 /* 
@@ -44,8 +46,10 @@ Examples:
 
 */
 
-function joinArrays(){
-    
+function joinArrays(...arrays){
+    return arrays.reduce((acc, next) => {
+        return [... acc, ... next];
+    }, []);
 }
 
 /* 
@@ -57,8 +61,14 @@ Examples:
     sumEvenArgs(1,2) // 2
 */
 
-function sumEvenArgs(){
-    
+function sumEvenArgs(...args){
+    return args.reduce((acc, next) => {
+        if (next % 2 === 0) {
+            return acc + next;
+        } else {
+            return acc;
+        }
+    }, 0);
 }
 
 /* 
@@ -91,10 +101,26 @@ Examples:
 
 */
 
+// function personSubtract(a, b, c) {
+//     return this.firstName + " subtracts " + (a - b - c);
+// }
 
-function flip(fn, thisArg){
-    
+// var person = {
+//     firstName: 'Elie'
+// }
+
+function flip(fn, thisArg, ...outer){
+    return function(...inner) {
+        const params = [...outer, ...inner].slice(0, fn.length).reverse();
+        return fn.bind(thisArg)(...params);
+        
+        // alternate!
+        // return fn.apply(thisArg, params);
+    };
 }
+
+// var flipFn = flip(personSubtract, person);
+// var flipFn2 = flip(personSubtract, person, 5, 6);
 
 /* 
 Write a function called bind which accepts a function and a value for the keyword this. Bind should return a new function that when invoked, will invoke the function passed to bind with the correct value of the keyword this. HINT - if you pass more than two parameters to bind, those parameters should be included as parameters to the inner function when it is invoked. You will have to make use of closure!
@@ -128,6 +154,25 @@ Examples:
 
 */
 
-function bind(fn, thisArg){
-    
+function bind(fn, thisArg, ...outer){
+    return function(...inner) {
+        const params = [...outer, ...inner]
+
+        return fn.bind(thisArg)(...params);
+
+        // alternate!
+        // return fn.apply(thisArg, params);
+        // return fn.call(thisArg, ...params);
+    };
 }
+
+// function addFourNumbers(a, b, c, d) {
+//     return a + b + c + d;
+// }
+
+// console.log(bind(addFourNumbers, this, 1)(2, 3, 4));
+// console.log(bind(addFourNumbers, this, 1, 2)(3, 4));
+// console.log(bind(addFourNumbers, this, 1, 2, 3)(4));
+// console.log(bind(addFourNumbers, this, 1, 2, 3, 4)());
+// console.log(bind(addFourNumbers, this)(1, 2, 3, 4));
+// console.log(bind(addFourNumbers, this)(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
