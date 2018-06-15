@@ -64,8 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const guess = target.text();
       const similarityScore = compareWords(guess, password);
 
-      target.classed('disabled', true);
-      target.text(`${guess} --> Matching Letters: ${similarityScore}`);
+      target
+        .classed('disabled', true)
+        .text(`${guess} --> Matching Letters: ${similarityScore}`);
       
       setGuessCount(guessCount - 1);
 
