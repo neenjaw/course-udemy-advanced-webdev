@@ -1,0 +1,68 @@
+body {
+    background-color: #e4e4e4;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #notes, #actions {
+    margin: 0 auto;
+    width: 75%;
+  }
+
+  #actions {
+      display: flex;
+  }
+
+  .note {
+    background-color: #fdffb7;
+    border: 8px solid #d4daa7;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .progress {
+      background-color: #b8ffba;
+      border-color: #4caf50;
+  }
+  
+  form {
+    text-align: center;
+    flex-grow: 1;
+
+    display: flex;
+  }
+  
+  input,
+  button {
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  input {
+      flex-grow: 1;
+  }
+  
+  button {
+    background-color: #ff9494;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+
+  button.remove-all {
+      background-color: fuchsia;
+  }
+
+  button.lucky {
+      background-color: aqua;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    background-color: #fe2222;
+  }
