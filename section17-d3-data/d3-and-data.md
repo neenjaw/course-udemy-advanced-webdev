@@ -12,6 +12,8 @@
 ## Resources
 
 - [D3 In Depth -- Enter/Exit](http://d3indepth.com/enterexit/)
+- [Code](https://bl.ocks.org/mmmaaatttttt/17616c80b7ecaaca5316f0218c19897a)
+- [Live Site](http://bl.ocks.org/mmmaaatttttt/raw/17616c80b7ecaaca5316f0218c19897a/)
 
 ## Basic Data Joins
 
@@ -28,7 +30,7 @@ How to join the model to the view?
 - `selection.data()`
 - `selection.enter()`
 
-## selection.data()
+### selection.data()
 
 This creates a new selection object with two additional functions attached:
 
@@ -80,5 +82,9 @@ d3.select('#content')
 </div>
 ```
 
----
+## General Update Pattern
 
+1. Grab the update selection, make any changes unique to that selection, store it in a variable.
+2. Grab the exit selection an remove any unnecessary elements.
+3. Grab the enter selection and make any changes unique to that selection.
+4. Merge the enter and update selections, and make any changes that you want to be shared across both selections.
