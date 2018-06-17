@@ -9,6 +9,10 @@
 - update existing DOM elements with new data
 - merge update an enter selections, and describe D3's general update pattern
 
+## Resources
+
+- [D3 In Depth -- Enter/Exit](http://d3indepth.com/enterexit/)
+
 ## Basic Data Joins
 
 | HTML Structure | JS Data |
@@ -35,4 +39,46 @@ This creates a new selection object with two additional functions attached:
 
 This creates `n` number of dummy nodes without elements attaced which then can be used with the `.append()` method to create DOM elements using the data
 
-Can then use the `.text()` function with a callback to then use the data associated with the enter node.
+Then, when manipulating a selection, you can use the data that is stored in d3's virtual dom to programmatically repond to the node's data:
+
+- `selection.text(function callback(data, index) { return 'text to display'; })`
+- `selection.style('style-name', function callback(data, index) { return 'style value'; })`
+
+### selection.exit()
+
+From a data selection, creates an exit selection which consists of elements to be removed from the DOM.  Usually followed by `.remove()`
+
+If the data selection is shorter in length from the `.exit()` selection, the `.remove()` method will remove the surplus elements.
+
+#### Initial
+
+```html
+<div id="content">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+```
+
+#### D3 manipulation
+
+```js
+var myData = ['A'];
+
+d3.select('#content')
+  .selectAll('div')
+  .data(myData)
+  .exit()
+  .remove();
+```
+
+#### Result
+
+```html
+<div id="content">
+  <div></div>
+</div>
+```
+
+---
+

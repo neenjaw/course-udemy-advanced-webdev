@@ -47,7 +47,7 @@ d3.select('.remove-all')
 d3.select('.lucky')
     .on('click', function() {
         d3.selectAll('.note')
-            .style('font-size', function() {
+            .style('font-size', function(_data, _index) {
                 return Math.random() * 100 + 'px';
             });
     });
