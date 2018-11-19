@@ -175,6 +175,16 @@ add.on('click', function() {
   add.remove();
 });
 
-function styleQuote(selection) {
-
+function makeQuotes(nodes) {
+  nodes.append('li')
+    .text(function (datum, idx) {
+      return `"${datum.quote}" - ${datum.movie} (${datum.year})`;
+    })
+    .style('margin', '20px')
+    .style('padding', '20px')
+    .style('font-size', function (d) {
+      return d.quote.length < 25 ? '2em' : '1em';
+    })
+    .style('background-color', d => colors[d.rating])
+    .style('border-radius', '8px')
 }
