@@ -1,3 +1,8 @@
+// TODO: Extract to a function to make it updateable
+// TODO: Add in controls to select data points
+// TODO: Add in a hsl legend
+// TODO: Add in onclick to display country
+
 var width = 500;
 var height = 500;
 var padding = 30;
