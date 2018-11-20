@@ -59,12 +59,13 @@ Allows you to group elements, styles
 ```html
 <rect x="100" y="100" width="750" height="250" fill="#ffc107" stroke="blue" stroke-width="blue" rx="2" ry="2">
 ```
+
 ### Polygon
 
 - `points` list of space delimited x,y coordinates
 
 ```html
-<polygon 
+<polygon
     fill="yellow"
     stroke="purple"
     stroke-width="4px"
@@ -90,7 +91,7 @@ Allows you to group elements, styles
 - `x` bottom-left corner of the text
 - `y`
 - `dx` shift the anchor point
-- `dy` 
+- `dy`
 
 CSS property:
 
@@ -117,9 +118,8 @@ CSS property:
     - cubic bezier curve -- `C cx1 cy1, cx2 cy2, x y`
     - circular arc command -- `A rx ry rotate largeArc sweep x y`
 
-
 ```html
-<path 
+<path
     d="M 400 100
        L 500 300
        L 300 300
@@ -129,7 +129,7 @@ CSS property:
 />
 
 
-<path 
+<path
     d="m 400 100
        l 100 200
        l -200 000
